@@ -1,18 +1,7 @@
 <?php
 /*
-Template Name: Главная
+Template Name: Landing
 */
-
-$slideshow = get_field( "slideshow" );
-//$query = new WP_Query;
-//$services = $query->query(array(
-//    'post_parent' => 9,
-//    'order' => 'ASC',
-//    'orderby' => 'menu_order',
-//    'posts_per_page' => -1,
-//    'post_type' => 'page'
-//));
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,27 +12,51 @@ $slideshow = get_field( "slideshow" );
         <div class="wrapper">
             <?php get_template_part( 'partials/header' ) ?>
 
-            <div class="slideshow" uk-slideshow="animation: fade; ratio: false">
-                <ul class="uk-slideshow-items">
-                    <?php foreach($slideshow as $item) : ?>
-                        <li class="slideshow-item">
-                            <!-- <div class="uk-position-cover uk-animation-kenburns uk-transform-origin-center-left"> -->
-                            <img class="slideshow-item__image" src="<?php echo $item['image']['url'] ?>" alt="<?php echo $item['image']['title'] ?>" uk-cover>
-                            <!-- </div> -->
-                            <div class="slideshow-item__info">
-                                <?php if ($item['link']) : ?>
-                                    <a href="<?php echo $item['link'] ?>"><?php echo $item['title'] ?></a>
-                                <?php else: ?>
-                                    <div class="slideshow-item__title"><?php echo $item['title'] ?></div>
-                                <?php endif; ?>
-                                <div class="slideshow-item__desc"><?php echo $item['description'] ?></div>
-                            </div>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-                <button class="slideshow__prev" uk-slideshow-item="previous"></button>
-                <button class="slideshow__next" uk-slideshow-item="next"></button>
-                <ul class="slideshow__nav uk-slideshow-nav uk-flex uk-flex-center"></ul>
+            <div class="slideshow" uk-slideshow="animation: push; min-height: 500; max-height: 500; velocity: .2">
+
+                <div class="uk-position-relative uk-visible-toggle uk-light">
+
+                    <ul class="uk-slideshow-items">
+                        <?php foreach(get_field( "slideshow" ) as $item) : ?>
+                            <li>
+                                <div class="uk-position-cover uk-animation-kenburns uk-transform-origin-center-left" uk-slideshow-parallax="scale: 1.2,1.2,1">
+                                    <img src="<?php echo $item['image']['url'] ?>" alt="<?php echo $item['image']['title'] ?>" uk-cover>
+                                </div>
+                                <div class="uk-position-cover" uk-slideshow-parallax="opacity: 0,0,0.2; backgroundColor: #000,#000"></div>
+                                <?php if ($item['link']) : ?><a href="<?php echo $item['link'] ?>"><?php endif; ?>
+                                <div class="uk-position-center uk-position-medium uk-text-center">
+                                    <div uk-slideshow-parallax="scale: 1,1,0.8">
+                                        <h2 uk-slideshow-parallax="x: 200,0,0"><?php echo $item['title'] ?></h2>
+                                        <p uk-slideshow-parallax="x: 400,0,0;"><?php echo $item['text'] ?></p>
+                                    </div>
+                                </div>
+                                <?php if ($item['link']) : ?></a><?php endif; ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+                    <div class="uk-position-bottom-center uk-position-small">
+                        <ul class="uk-slideshow-nav uk-dotnav"></ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="page-internal">
+                <div class="uk-container">
+                    <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+                        <div class="page-content">
+                            <?php the_content(); ?>
+                        </div>
+                    <?php endwhile; else: ?>
+                        <div class="page-content">
+                            <p>Извините, ничего не найдено.</p>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
 
             <?php get_template_part( 'partials/footer' ) ?>

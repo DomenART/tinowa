@@ -1,3 +1,5 @@
+require.context('../img', true);
+
 import $ from 'jquery'
 window.$ = $
 window.jQuery = $
@@ -30,64 +32,17 @@ $('.js-validate').each(function(){
     });
 });
 
-var $slider = $('.js-slider'),
-    $slides = $('.slider-item', $slider),
-    slideMaxHeight = 0;
-$slides.each(function() {
-    var height = $(this).height();
-
-    if(height > slideMaxHeight) {
-        slideMaxHeight = height;
-    }
+/** Лайтбокс на галереи **/
+$('.gallery, .lightbox').each(function(){
+    UIkit.lightbox(this, {});
 });
-$slides.height(slideMaxHeight);
-$slider.on('show.uk.slideset', function(e, s) {
-  var image = $(s).data('image');
-
-  if(image) {
-    $('.js-home-intro').css('background-image', 'url(' + image + ')');
-  }
-});
-
-$('.js-services-circle a').hover(
-  function() {
-    $(this).parent().addClass('active');
-  },
-  function() {
-    $(this).parent().removeClass('active');
-  }
-);
-
-$('.header-menu>li.menu-item-has-children').hover(
-    function() {
-        let padding = ($(window).width() - 1200) / 2 - 15;
-        let top = $(this).position().top + $(this).height();
-        $(this).find('ul').css({
-            top: top,
-            paddingLeft: padding,
-            paddingRight: padding
-        });
-
-        $(this).addClass('hovered');
-    },
-    function() {
-        $(this).removeClass('hovered');
-    }
-);
 
 $(window).scroll(function(){
     var scrollTop = $(this).scrollTop();
 
     if (scrollTop > 500) {
-        $('.js-scrollup').fadeIn();
+        $('.js-scrollup').addClass('scrollup_visible');
     } else {
-        $('.js-scrollup').fadeOut();
+        $('.js-scrollup').removeClass('scrollup_visible');
     }
-});
-
-
-$('.js-projects-main').click(function() {
-    $($(this).data('target')).click();
-
-    return false;
 });

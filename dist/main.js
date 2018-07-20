@@ -159,6 +159,83 @@ eval("var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\tr
 
 /***/ }),
 
+/***/ "./src/img sync recursive ^\\.\\/.*$":
+/*!*******************************!*\
+  !*** ./src/img sync ^\.\/.*$ ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./cs_CZ.png\": \"./src/img/cs_CZ.png\",\n\t\"./en_GB.png\": \"./src/img/en_GB.png\",\n\t\"./ess.jpg\": \"./src/img/ess.jpg\",\n\t\"./logo-old.png\": \"./src/img/logo-old.png\",\n\t\"./logo.png\": \"./src/img/logo.png\",\n\t\"./ru_RU.png\": \"./src/img/ru_RU.png\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\tvar module = __webpack_require__(id);\n\treturn module;\n}\nfunction webpackContextResolve(req) {\n\tvar id = map[req];\n\tif(!(id + 1)) { // check for number or string\n\t\tvar e = new Error('Cannot find module \"' + req + '\".');\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn id;\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/img sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/img_sync_^\\.\\/.*$?");
+
+/***/ }),
+
+/***/ "./src/img/cs_CZ.png":
+/*!***************************!*\
+  !*** ./src/img/cs_CZ.png ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"img/cs_CZ.png?dbbfae2b49e48c4abaad74ef40dc11e8\";\n\n//# sourceURL=webpack:///./src/img/cs_CZ.png?");
+
+/***/ }),
+
+/***/ "./src/img/en_GB.png":
+/*!***************************!*\
+  !*** ./src/img/en_GB.png ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"img/en_GB.png?df5bd966ae907e0d0f196b04405557d0\";\n\n//# sourceURL=webpack:///./src/img/en_GB.png?");
+
+/***/ }),
+
+/***/ "./src/img/ess.jpg":
+/*!*************************!*\
+  !*** ./src/img/ess.jpg ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"img/ess.jpg?f9d121118b4c1d30ea86bb3490d45cc9\";\n\n//# sourceURL=webpack:///./src/img/ess.jpg?");
+
+/***/ }),
+
+/***/ "./src/img/logo-old.png":
+/*!******************************!*\
+  !*** ./src/img/logo-old.png ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"img/logo-old.png?8692cfdedef42a1b7e693263a4c30fab\";\n\n//# sourceURL=webpack:///./src/img/logo-old.png?");
+
+/***/ }),
+
+/***/ "./src/img/logo.png":
+/*!**************************!*\
+  !*** ./src/img/logo.png ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"img/logo.png?35c97013fbaa834d89767deb1e75d2f3\";\n\n//# sourceURL=webpack:///./src/img/logo.png?");
+
+/***/ }),
+
+/***/ "./src/img/ru_RU.png":
+/*!***************************!*\
+  !*** ./src/img/ru_RU.png ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"img/ru_RU.png?9c446d6a5cf4ee64e7b818d4bf03e48a\";\n\n//# sourceURL=webpack:///./src/img/ru_RU.png?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -179,7 +256,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _les
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery-validation */ \"./node_modules/jquery-validation/dist/jquery.validate.js\");\n/* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery_validation__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var uikit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! uikit */ \"./node_modules/uikit/dist/js/uikit.js\");\n/* harmony import */ var uikit__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(uikit__WEBPACK_IMPORTED_MODULE_2__);\n\nwindow.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;\nwindow.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;\n\n\n\nwindow.UIkit = uikit__WEBPACK_IMPORTED_MODULE_2___default.a;\nuikit__WEBPACK_IMPORTED_MODULE_2___default.a.use(__webpack_require__(/*! uikit/dist/js/uikit-icons */ \"./node_modules/uikit/dist/js/uikit-icons.js\"));\n\n/** Лайтбокс **/\n/*$(\".js-lightbox\").fancybox({\n  tpl: {\n    closeBtn : '<a title=\"Close\" class=\"fancybox-item fancybox-close\" href=\"javascript:;\">&times;</a>',\n    next     : '<a title=\"Next\" class=\"fancybox-nav fancybox-next\" href=\"javascript:;\">Следующее фото <i class=\"uk-icon-angle-right\"></i></a>',\n    prev     : '<a title=\"Previous\" class=\"fancybox-nav fancybox-prev\" href=\"javascript:;\"><i class=\"uk-icon-angle-left\"></i> Предыдущее фото</a>'\n  },\n  helpers: {\n    title: null\n  },\n  afterLoad: function() {\n    this.outer.before('<div class=\"fancybox-title fancybox-title-before\">' + this.title + '</div>');\n  }\n});*/\n\n/** Валидация и отправка форм **/\njquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-validate').each(function () {\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).validate({\n        errorClass: 'uk-form-danger',\n        validClass: 'uk-form-success'\n    });\n});\n\nvar $slider = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-slider'),\n    $slides = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.slider-item', $slider),\n    slideMaxHeight = 0;\n$slides.each(function () {\n    var height = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).height();\n\n    if (height > slideMaxHeight) {\n        slideMaxHeight = height;\n    }\n});\n$slides.height(slideMaxHeight);\n$slider.on('show.uk.slideset', function (e, s) {\n    var image = jquery__WEBPACK_IMPORTED_MODULE_0___default()(s).data('image');\n\n    if (image) {\n        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-home-intro').css('background-image', 'url(' + image + ')');\n    }\n});\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-services-circle a').hover(function () {\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).parent().addClass('active');\n}, function () {\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).parent().removeClass('active');\n});\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()('.header-menu>li.menu-item-has-children').hover(function () {\n    let padding = (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() - 1200) / 2 - 15;\n    let top = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).position().top + jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).height();\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('ul').css({\n        top: top,\n        paddingLeft: padding,\n        paddingRight: padding\n    });\n\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('hovered');\n}, function () {\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('hovered');\n});\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {\n    var scrollTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop();\n\n    if (scrollTop > 500) {\n        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-scrollup').fadeIn();\n    } else {\n        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-scrollup').fadeOut();\n    }\n});\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-projects-main').click(function () {\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('target')).click();\n\n    return false;\n});\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery-validation */ \"./node_modules/jquery-validation/dist/jquery.validate.js\");\n/* harmony import */ var jquery_validation__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery_validation__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var uikit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! uikit */ \"./node_modules/uikit/dist/js/uikit.js\");\n/* harmony import */ var uikit__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(uikit__WEBPACK_IMPORTED_MODULE_2__);\n__webpack_require__(\"./src/img sync recursive ^\\\\.\\\\/.*$\");\n\n\nwindow.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;\nwindow.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;\n\n\n\nwindow.UIkit = uikit__WEBPACK_IMPORTED_MODULE_2___default.a;\nuikit__WEBPACK_IMPORTED_MODULE_2___default.a.use(__webpack_require__(/*! uikit/dist/js/uikit-icons */ \"./node_modules/uikit/dist/js/uikit-icons.js\"));\n\n/** Лайтбокс **/\n/*$(\".js-lightbox\").fancybox({\n  tpl: {\n    closeBtn : '<a title=\"Close\" class=\"fancybox-item fancybox-close\" href=\"javascript:;\">&times;</a>',\n    next     : '<a title=\"Next\" class=\"fancybox-nav fancybox-next\" href=\"javascript:;\">Следующее фото <i class=\"uk-icon-angle-right\"></i></a>',\n    prev     : '<a title=\"Previous\" class=\"fancybox-nav fancybox-prev\" href=\"javascript:;\"><i class=\"uk-icon-angle-left\"></i> Предыдущее фото</a>'\n  },\n  helpers: {\n    title: null\n  },\n  afterLoad: function() {\n    this.outer.before('<div class=\"fancybox-title fancybox-title-before\">' + this.title + '</div>');\n  }\n});*/\n\n/** Валидация и отправка форм **/\njquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-validate').each(function () {\n  jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).validate({\n    errorClass: 'uk-form-danger',\n    validClass: 'uk-form-success'\n  });\n});\n\n/** Лайтбокс на галереи **/\njquery__WEBPACK_IMPORTED_MODULE_0___default()('.gallery, .lightbox').each(function () {\n  uikit__WEBPACK_IMPORTED_MODULE_2___default.a.lightbox(this, {});\n});\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {\n  var scrollTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop();\n\n  if (scrollTop > 500) {\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-scrollup').addClass('scrollup_visible');\n  } else {\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-scrollup').removeClass('scrollup_visible');\n  }\n});\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ }),
 
