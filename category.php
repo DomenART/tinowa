@@ -4,41 +4,35 @@
         <?php get_template_part('partials/head'); ?>
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper uk-offcanvas-content">
             <?php get_template_part('partials/header'); ?>
 
-            <div class="page-internal">
+            <!-- <div class="page-internal"> -->
                 <div class="uk-container">
-                    <div class=" uk-breadcrumb breadcrumb">
-                        <?php bcn_display() ?>
-                    </div>
+                    <!-- <div class=" uk-breadcrumb breadcrumb"> -->
+                        <?php //bcn_display() ?>
+                    <!-- </div> -->
                     <h1><?php single_cat_title() ?></h1>
                     <?php if (have_posts()) : ?>
-                        <div class="uk-child-width-1-2@m" uk-grid>
-                            <?php  $idx = 0; while ( have_posts() ) : $idx++; the_post(); ?>
+                        <?php while ( have_posts() ) : the_post(); ?>
+                            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                                <?php if (has_post_thumbnail()): ?>
+                                <a href="<?php echo get_post_permalink() ?>" class="uk-card-media-left uk-cover-container">
+                                    <?php the_post_thumbnail() ?>
+                                </a>
+                                <?php endif; ?>
                                 <div>
-                                    <div class="uk-card uk-card-default">
-                                        <?php if (has_post_thumbnail() && $idx%2 != 0) : ?>
-                                            <a href="<?php echo get_post_permalink() ?>" class="uk-card-media-top">
-                                                <?php the_post_thumbnail() ?>
-                                            </a>
-                                        <?php endif; ?>
-                                        <div class="uk-card-body">
-                                            <h3 class="uk-card-title"><?php the_title(); ?></h3>
-                                            <?php the_excerpt(); ?>
-                                            <a href="<?php echo get_post_permalink() ?>" class="uk-button uk-button-default">
-                                                <?php pll_e('more'); ?>
-                                            </a>
-                                        </div>
-                                        <?php if (has_post_thumbnail() && $idx%2 == 0) : ?>
-                                            <a href="<?php echo get_post_permalink() ?>" class="uk-card-media-bottom">
-                                                <?php the_post_thumbnail() ?>
-                                            </a>
-                                        <?php endif; ?>
+                                    <div class="uk-card-body">
+                                        <a href="<?php echo get_post_permalink() ?>" class="uk-card-title"><?php the_title(); ?></a>
+                                        <div class="uk-text-meta"><?php the_date() ?></div>
+                                        <?php the_excerpt(); ?>
+                                        <a href="<?php echo get_post_permalink() ?>" class="uk-button uk-button-default">
+                                            <?php pll_e('more'); ?>
+                                        </a>
                                     </div>
                                 </div>
-                            <?php endwhile; ?>
-                        </div>
+                            </div>
+                        <?php endwhile; ?>
                         <?php the_posts_pagination() ?>
                     <?php else: ?>
                         <div class="page-content">
@@ -46,7 +40,7 @@
                         </div>
                     <?php endif; ?>
                 </div>
-            </div>
+            <!-- </div> -->
 
             <?php get_template_part('partials/footer'); ?>
         </div>

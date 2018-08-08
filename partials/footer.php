@@ -1,25 +1,42 @@
-<div class="footer">
+<div class="banners">
     <div class="uk-container">
-        <div class="footer__first">
+        <div class="uk-grid" uk-grid>
+            <?php foreach(get_field( 'banners', 'option' ) as $item) : ?>
+                <div class="uk-width-1-2@s uk-width-1-4@m">
+                    <?php if (!empty($item['link'])): echo '<a href="' . $item['link'] . '">'; endif; ?>
+                        <img src="<?php echo $item['image']['url'] ?>" alt="">
+                    <?php if (!empty($item['link'])): echo '</a>'; endif; ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
+<div class="footer-first">
+    <div class="uk-container">
+        <div class="footer-first__container">
             <?php wp_nav_menu([
-                'container'         => false, 
+                'container'         => false,
                 'theme_location'    => 'footermenu',
                 'menu_class'        => 'footer__menu',
             ]); ?>
+        </div>
+    </div>
+</div>
+
+<div class="footer-second">
+    <div class="uk-container uk-container-large">
+        <div class="footer-second__container">
+            <div class="footer__copyright">
+                <?php echo nl2br(pll__('copyright')); ?>
+            </div>
+
             <div class="footer__share">
                 <?php foreach(get_field( 'social-links', 'option' ) as $item) : ?>
                     <a href="<?php echo $item['link'] ?>" class="share-item share-item_<?php echo $item['name'] ?>">
                         <span uk-icon="<?php echo $item['name'] ?>"></span>
                     </a>
                 <?php endforeach; ?>
-            </div>
-        </div>
-        <div class="footer__second">
-            <div class="footer__copyright">
-                <?php echo nl2br(pll__('copyright')); ?>
-            </div>
-            <div class="footer__creator">
-                
             </div>
         </div>
     </div>

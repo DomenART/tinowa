@@ -37,6 +37,13 @@ $('.gallery, .lightbox').each(function(){
     UIkit.lightbox(this, {});
 });
 
+$('.js-offcanvas-nav').each(function(){
+  UIkit.nav(this, {
+    multiple: true,
+    targets: '> .menu-item-has-children'
+  });
+});
+
 $(window).scroll(function(){
     var scrollTop = $(this).scrollTop();
 

@@ -9,26 +9,23 @@ Template Name: Landing
         <?php get_template_part( 'partials/head' ) ?>
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper uk-offcanvas-content">
             <?php get_template_part( 'partials/header' ) ?>
 
-            <div class="slideshow" uk-slideshow="animation: push; min-height: 500; max-height: 500; velocity: .2">
+            <div class="slideshow" uk-slideshow="velocity: .15; ratio: false; autoplay: true; autoplay-interval: 8000">
 
                 <div class="uk-position-relative uk-visible-toggle uk-light">
 
                     <ul class="uk-slideshow-items">
                         <?php foreach(get_field( "slideshow" ) as $item) : ?>
                             <li>
-                                <div class="uk-position-cover uk-animation-kenburns uk-transform-origin-center-left" uk-slideshow-parallax="scale: 1.2,1.2,1">
+                                <div class="uk-position-cover">
                                     <img src="<?php echo $item['image']['url'] ?>" alt="<?php echo $item['image']['title'] ?>" uk-cover>
                                 </div>
-                                <div class="uk-position-cover" uk-slideshow-parallax="opacity: 0,0,0.2; backgroundColor: #000,#000"></div>
                                 <?php if ($item['link']) : ?><a href="<?php echo $item['link'] ?>"><?php endif; ?>
                                 <div class="uk-position-center uk-position-medium uk-text-center">
-                                    <div uk-slideshow-parallax="scale: 1,1,0.8">
-                                        <h2 uk-slideshow-parallax="x: 200,0,0"><?php echo $item['title'] ?></h2>
-                                        <p uk-slideshow-parallax="x: 400,0,0;"><?php echo $item['text'] ?></p>
-                                    </div>
+                                    <h2><?php echo $item['title'] ?></h2>
+                                    <p><?php echo $item['text'] ?></p>
                                 </div>
                                 <?php if ($item['link']) : ?></a><?php endif; ?>
                             </li>
